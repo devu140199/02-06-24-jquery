@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>jquery syntax.</title>
+</head>
+<body>
+    <p id="text"></p>
+    <p id="text2">good night my friend</p>
+
+    <script src="/jquery/jquery-3.7.1.slim.min.js"></script>
+    <script>
+        
+
+        //2. jquery();
+        jQuery(function($){
+            alert('ok jqery() is working');
+        });
+
+        //3. jquery $().ready();
+        $(document).ready(function($){
+            alert('ok fine in $().ready();');
+        });
+
+        //1.jquery simple syntax ()();
+        (function($){
+            alert('hello ok working');
+        })(jQuery);
+
+        //jquery is selection and action on setting and getting content
+        //first of content setting in paragraph
+        //$('selcetion').action();
+        $('#text').html('good night');
+        var x = $('#text2').html();
+        console.log(x);
+
+    </script>
+</body>
+</html>
