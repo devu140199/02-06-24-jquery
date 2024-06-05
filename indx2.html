@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery syntax leraning</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <button id="btnAction">Get Style to Click</button>
+    <button id="btnUp">traversing to up1</button>
+    <button id="btnUp2">traversing to up2</button>
+    <button id="btnUp3">traversing to up3</button>
+    <div class="parent">
+        Parent
+        <div class="child1">
+            Child 1
+            <div class="grandchild">Grand Child 1_1</div>
+            <div class="grandchild">Grand Child 1_2</div>
+            <div class="grandchild">Grand Child 1_3</div>
+            <div class="grandchild">Grand Child 1_4</div>
+        </div>
+        <div class="child2">
+            Child 2
+            <div class="grandchild">Grand Child 2_1</div>
+            <div class="grandchild">Grand Child 2_2</div>
+            <div class="grandchild">Grand Child 2_3</div>
+            <div class="grandchild">Grand Child 2_4</div>
+        </div>
+    </div>
+
+    <script>
+
+        $('#btnAction').on('click',function(){
+            //()(); state to use
+            $(function(){
+            //$(selector).action();
+            //for parent style
+            $(".parent").css('border','2px solid red');
+            $('.parent').css("background","#9c9c9c");
+            $('.parent').css('padding','10px');
+            //for child 1 style
+            $('.child1').css('border','3px dashed red');
+            $('.child1').css('background-color','pink');
+            $('.child1').css('padding','10px');
+            $('.child1').css('margin-bottom','10px')
+            //for child 2 style
+            $('.child2').css('border','3px solid lavender');
+            $('.child2').css('background','orange');
+            $('.child2').css('padding','10px');
+            //for grandchild style
+            $('.grandchild').css('border','2px dashed #000');
+            $('.grandchild').css('padding','10px');
+            $('.grandchild').css('background','purple');
+            $('.grandchild').css('margin','10px');
+        })(jQuery);
+        });
+        
+        $('#btnUp').click(function(){
+            $('.grandchild').parent().css('border','2px solid red');
+        });
+
+        $('#btnUp2').click(function(){
+            $('.grandchild').parents().css('border','3px dashed green');
+        });
+
+        // $('#btnUp3').click(function(){
+        //     $('.grandchild').parentsUntil('.parent').css('border','10px dashed purple');
+        // });
+        
+        $(document).ready(function(){
+            $('#btnUp3').click(function(){
+                $('.grandchild').closest('.parent').css('border','5px solid pink');
+            });
+        });
+
+       
+    </script>
+</body>
+</html>
