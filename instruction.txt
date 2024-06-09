@@ -1,0 +1,10 @@
+
+#this is a page loader in jQuery
+
+1. ()();    =   (doucment)(jQuery);
+2. (doucment).ready();
+3. jQuery.();
+
+(selector).action();
+
+

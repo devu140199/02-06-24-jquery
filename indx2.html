@@ -11,6 +11,7 @@
     <button id="btnUp">traversing to up1</button>
     <button id="btnUp2">traversing to up2</button>
     <button id="btnUp3">traversing to up3</button>
+    <button id="btnUp4">toggle btn</button>
     <div class="parent">
         Parent
         <div class="child1">
@@ -56,14 +57,9 @@
         })(jQuery);
         });
         
-        $('#btnUp').click(function(){
-            $('.grandchild').parent().css('border','2px solid red');
-        });
+        
 
-        $('#btnUp2').click(function(){
-            $('.grandchild').parents().css('border','3px dashed green');
-        });
-
+        
         // $('#btnUp3').click(function(){
         //     $('.grandchild').parentsUntil('.parent').css('border','10px dashed purple');
         // });
@@ -72,7 +68,20 @@
             $('#btnUp3').click(function(){
                 $('.grandchild').closest('.parent').css('border','5px solid pink');
             });
+            $('#btnUp2').click(function(){
+                $('.grandchild').parents().css('border','3px dashed green');
+            });
+            $('#btnUp').click(function(){
+                $('.grandchild').parent().css('border','2px solid red');
+            });
+            // $("#btnUp4").toggle();
         });
+        $(document).ready(function(){
+            $("#btnUp4").click(function(){
+                $(".parent").toggle();
+            });
+        });
+        
 
        
     </script>
